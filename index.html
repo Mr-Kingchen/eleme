@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>饿了么</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script type="text/javascript" src="js/resp.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/fly.js"></script>
+
+	<style>
+		.u-flyer {
+			width: 1.0rem;
+			height: 1.0rem;
+			border-radius: 50%;
+			position: fixed;
+			background: #00A0DC;
+			z-index: 9999;
+		}
+      .active-nav{
+        background: #fff;
+        color: red;
+      }
+      #swiper-container2{
+      	background: #f3f5f7;
+      	text-align: center;
+      	height: 1.5rem;
+      	line-height: 1.5rem;
+      	font-size: 0.65rem;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .tabs{
+        width:3.0rem;
+        height: 100%;
+        overflow: hidden;
+        float: left;
+        background: #f3f5f7;
+      }
+      .tabs .lie .ge{
+        font-size: 0.6rem;
+        text-align: center;
+        width:3.0rem;
+        display: block;
+      }
+      .tabs .lie .ge p{
+        display: block;
+        line-height: 2.5rem;
+      }
+      .tabs .lie .active{
+        border-left: 2px solid red;
+        color:#c14545;
+        background-color: white;
+      }
+      #tabs-contain{
+        float: right;
+      }
+      </style>
+</head>
+<body ng-controller="cont">
+	<div class="wrap">
+		<div class="navbar">
+			<div class="navbar-btou">
+				<div class="navbar-content">
+					<div class="toutu">
+						<img src="images/avatar@2x.png" alt="">
+					</div>
+					<div class="pinpai">
+						<span>品牌</span>
+						<span>粥品香坊(大运村)</span>
+						<p>蜂鸟专送 / 38分钟送达</p>
+						<span>减</span>
+						<span>在线支付满28减5,满50减10</span>
+						<span>5个 ></span>
+					</div>
+				</div>
+			</div>
+			<div class="navbar-gongao">
+				<span>公告</span>
+				<span>粥品香坊其烹饪粥料的秘方源于中国千年古法,再融合现... ></span>
+			</div>
+		</div>
+
+
+
+          <!-- 头部导航 -->
+      <div class="swiper-container" id="swiper-container2">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide active-nav">商品</div>
+                    <div class="swiper-slide">评价</div>
+                    <div class="swiper-slide">商家</div>
+            </div>
+      </div>
+      <!-- 分页面  选项卡 -->
+      <div class="swiper-container" id="swiper-container3">
+            <div class="swiper-wrapper">
+                  <div class="swiper-slide blue-slide">
+
+                  <!-- 物品展示 -->
+
+                          <div class="tabs">
+                                <div class="swiper-wrapper lie">
+                                	<div class="ge active"><p>热销榜</p></div>
+	                                <div class="ge"><p>单人套餐</p></div>
+	                                <div class="ge"><p>特色粥品</p></div>
+	                                <div class="ge"><p>精选热菜</p></div>
+	                                <div class="ge"><p>爽口凉菜</p></div>
+	                                <div class="ge"><p>半成品</p></div>
+	                                <div class="ge"><p>饭类</p></div>
+	                                <div class="ge"><p>面类</p></div>
+	                                <div class="ge"><p>饮料</p></div>
+                                </div>
+                            </div>
+
+                            <div id="tabs-container" class="swiper-container">
+                                <div class="swiper-wrapper" style="height: 30.0rem;">
+                                      <div class="swiper-slide one swiper-slide-visible">
+                                      		<ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp热销榜</li>
+												<li class="l4">
+													<div class="lianziz" ng-repeat="item1 in data1">
+														<div class="zhoutu"><img ng-src="{{item1.images}}" alt=""></div>
+														<div class="xiang">
+															<p class="p1">{{item1.name}}</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia" ng-click="set(item1.id,true)" onclick="setIco(event)"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">{{item1.num}}</span>
+															<span class="jian" ng-click="set(item1.id,false)"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>{{item1.price}}</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                      <div class="swiper-slide two swiper-slide-visible">
+                                      	<ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp单人套餐</li>
+												<li class="l4">
+													<div class="lianziz" ng-repeat="item2 in data2">
+														<div class="zhoutu"><img ng-src="{{item2.images}}" alt=""></div>
+														<div class="xiang">
+															<p class="p1">{{item2.name}}</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia" ng-click="set(item2.id,true)" onclick="setIco(event)"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">{{item2.num}}</span>
+															<span class="jian" ng-click="set(item2.id,false)"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>{{item2.price}}</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                      <div class="swiper-slide three swiper-slide-visible">
+                                      	<ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp特色粥品</li>
+												<li class="l4">
+													<div class="lianziz" ng-repeat="item3 in data3">
+														<div class="zhoutu"><img ng-src="{{item3.images}}" alt=""></div>
+														<div class="xiang">
+															<p class="p1">{{item3.name}}</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia" ng-click="set(item3.id,true)" onclick="setIco(event)"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">{{item3.num}}</span>
+															<span class="jian" ng-click="set(item3.id,false)"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>{{item3.price}}</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                      <div class="swiper-slide four swiper-slide-visible">
+                                      	<ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp精选热菜</li>
+												<li class="l4">
+													<div class="lianziz" ng-repeat="item in data">
+														<div class="zhoutu"><img ng-src="{{item.images}}" alt=""></div>
+														<div class="xiang">
+															<p class="p1">{{item.name}}</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia" ng-click="set($index,true)"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">{{item.num}}</span>
+															<span class="jian" ng-click="set($index,false)"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>{{item.price}}</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                      <div class="swiper-slide one swiper-slide-visible">
+                                           <ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp凉口爽菜</li>
+												<li class="l4">
+													<div class="lianziz" ng-repeat="item in data">
+														<div class="zhoutu"><img ng-src="{{item.images}}" alt=""></div>
+														<div class="xiang">
+															<p class="p1">{{item.name}}</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia" ng-click="set($index,true)"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">{{item.num}}</span>
+															<span class="jian" ng-click="set($index,false)"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>{{item.price}}</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                      <div class="swiper-slide two swiper-slide-visible">
+                                           <ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp半成品</li>
+												<li class="l4">
+													<div class="lianziz" ng-repeat="item in data">
+														<div class="zhoutu"><img ng-src="{{item.images}}" alt=""></div>
+														<div class="xiang">
+															<p class="p1">{{item.name}}</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia" ng-click="set($index,true)"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">{{item.num}}</span>
+															<span class="jian" ng-click="set($index,false)"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>{{item.price}}</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                      <div class="swiper-slide three swiper-slide-visible">
+                                           <ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp饭类</li>
+												<li class="l4">
+													<div class="lianziz" ng-repeat="item in data">
+														<div class="zhoutu"><img ng-src="{{item.images}}" alt=""></div>
+														<div class="xiang">
+															<p class="p1">{{item.name}}</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia" ng-click="set($index,true)"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">{{item.num}}</span>
+															<span class="jian" ng-click="set($index,false)"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>{{item.price}}</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                      <div class="swiper-slide four swiper-slide-visible">
+                                           <ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp面类</li>
+												<li class="l4">
+													<div class="lianziz" ng-repeat="item in data">
+														<div class="zhoutu"><img ng-src="{{item.images}}" alt=""></div>
+														<div class="xiang">
+															<p class="p1">{{item.name}}</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia" ng-click="set($index,true)"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">{{item.num}}</span>
+															<span class="jian" ng-click="set($index,false)"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>{{item.price}}</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                      <div class="swiper-slide one swiper-slide-visible">
+                                           <ul class="xiangq">
+                                      			<li class="l3">&nbsp&nbsp饮料</li>
+												<li class="l4">
+													<div class="lianziz">
+														<div class="zhoutu"><img src="images/lianzi@2x.png" alt=""></div>
+														<div class="xiang">
+															<p class="p1">莲子核桃黑米粥</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">0</span>
+															<span class="jian"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>10</span>				
+														</div>
+													</div>
+												</li>
+												<li class="l4">
+													<div class="lianziz">
+														<div class="zhoutu"><img src="images/lianzi@2x.png" alt=""></div>
+														<div class="xiang">
+															<p class="p1">莲子核桃黑米粥</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">0</span>
+															<span class="jian"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>10</span>				
+														</div>
+													</div>
+												</li>
+												<li class="l4">
+													<div class="lianziz">
+														<div class="zhoutu"><img src="images/lianzi@2x.png" alt=""></div>
+														<div class="xiang">
+															<p class="p1">莲子核桃黑米粥</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">0</span>
+															<span class="jian"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>10</span>				
+														</div>
+													</div>
+												</li>
+												<li class="l4">
+													<div class="lianziz">
+														<div class="zhoutu"><img src="images/lianzi@2x.png" alt=""></div>
+														<div class="xiang">
+															<p class="p1">莲子核桃黑米粥</p>
+															<p><span class="sp1">月售1132份 </span>
+															<span class="sp2"> 好评率100%</span></p>
+															<span class="sp3">
+															<span class="jia"><img src="images/jiahao@2x.png" alt=""></span>
+															<span class="shuz">0</span>
+															<span class="jian"><img src="images/jianhao@2x.png" alt=""></span>
+															</span>
+															<span class="p3"><span>￥</span>10</span>				
+														</div>
+													</div>
+												</li>
+                                      		</ul>
+                                      </div>
+                                </div>
+                            </div>
+
+                  </div>
+                  <div class="swiper-slide red-slide">棒棒棒！！！</div>
+                  <div class="swiper-slide orange-slide">对不起！附近没有商家</div>
+            </div>
+      </div>
+
+		
+
+
+		<div class="car">
+			<div class="yuan" onclick="cx()">
+					<img src="images/car@2x.png" alt="">
+					<span class="zongshu" id="end">{{allNum1+allNum2+allNum3}}</span>
+			</div>
+			<div class="peisongfei">
+				<span>￥{{allPrice1+allPrice2+allPrice3}}</span>
+				<span>|</span>
+				<span>另需配送费￥4元</span>
+				<span class="sp1">￥0元起送</span>
+			</div>
+		</div>
+
+		<div class="shangla">
+			<div class="qingchu">
+				<span class="sp1"><span class="shu">|&nbsp&nbsp</span>购物车</span>
+				<span class="sp2" onclick="xs()">关闭X</span>					
+			</div>
+			<div class="liebox">
+				<div class="liebiao" ng-repeat="item1 in cart">
+					<span class="mingcheng">{{item1.name}}</span>
+					<span class="spjia" ng-click="set(item1.id,true)"><img src="images/jiahao@2x.png" alt=""></span>
+					<span class="shuliang">{{item1.num}}</span>
+					<span class="spjian" ng-click="set(item1.id,false)"><img src="images/jianhao@2x.png" alt=""></span>
+					<span class="spjiage">￥{{item1.num*item1.price}}</span>	
+				</div>	
+			</div>
+		</div>
+
+	</div>
+
+<script type="text/javascript">
+	var obtn=document.querySelector('.wrap .shangla');
+	function cx(){
+		obtn.style.display="block";
+	}
+	function xs(){
+		obtn.style.display="none";
+	}
+</script>
+
+<script> 
+var mySwiper2 = new Swiper('#swiper-container2',{
+      watchSlidesProgress : true,
+      watchSlidesVisibility : true,
+      slidesPerView : 3,
+      allowSwipeToNext : false,
+      allowSwipeToPrev : false,
+onTap: function(){
+      mySwiper3.slideTo( mySwiper2.clickedIndex)
+    }
+})
+var mySwiper3 = new Swiper('#swiper-container3',{
+
+onSlideChangeStart: function(){
+      updateNavPosition()
+    }
+
+})
+
+function updateNavPosition(){
+    $('#swiper-container2 .active-nav').removeClass('active-nav')
+    var activeNav = $('#swiper-container2 .swiper-slide').eq(mySwiper3.activeIndex).addClass('active-nav');
+
+
+    if (!activeNav.hasClass('swiper-slide-visible')) {
+      if (activeNav.index()>mySwiper2.activeIndex) {
+        var thumbsPerNav = Math.floor(mySwiper2.width/activeNav.width())-1
+        mySwiper2.slideTo(activeNav.index()-thumbsPerNav)
+      }
+      else {
+        mySwiper2.slideTo(activeNav.index())
+      } 
+    }
+  }
+
+
+var swiper1 = new  Swiper('.tabs',{
+              freeMode:false,
+              freeModeSticky:true,
+              slidesPerView :'auto',
+              direction: 'vertical',
+              mousewheelControl : true,
+    });
+
+var tabsSwiper = new Swiper('#tabs-container',{
+              freeMode:false,
+              slidePerview:'auto',
+              freeModeSticky:true,
+              direction: 'vertical',
+              mousewheelControl : true, //滚轮控制滚动条
+              watchSlidesProgress : true,
+              watchSlidesVisibility : true,
+              // autoHeight: true, //高度随内容变化
+                    
+onSlideChangeStart: function(){
+      $(".tabs .lie .active").removeClass('active')
+      $(".tabs .lie .ge").eq(tabsSwiper.activeIndex).addClass('active')  
+    }
+    })
+
+$(".tabs .lie .ge").on('touchstart mousedown',function (e) {
+        e.preventDefault()
+        $(".tabs .lie .active").removeClass('active')
+        $(this).addClass('active')
+        tabsSwiper.slideTo($(this).index())
+    })
+$('.tabs .lie .ge').click(function (e) {
+        e.preventDefault();
+    })
+
+</script>
+<script type="text/javascript">
+	
+	var app=angular.module("myapp",[]);
+	app.controller("cont",function($scope){
+			$scope.data=[
+				{"name":"莲子核桃黑米粥",price:10,num:0,"images":"images/lianzi@2x.png"},
+				{"name":"南瓜粥",price:15,num:0,"images":"images/nangua@2x.png"},
+				{"name":"皮蛋瘦肉粥",price:20,num:0,"images":"images/shi@2x.png"},
+				{"name":"雪梨银耳百合粥",price:25,num:0,"images":"images/xueli@2x.png"},
+			];
+			$scope.data1=[
+				{"id":"a","name":"莲子核桃黑米粥",price:10,num:0,"images":"images/lianzi@2x.png"},
+				{"id":"b","name":"南瓜粥",price:15,num:0,"images":"images/nangua@2x.png"},
+				{"id":"c","name":"皮蛋瘦肉粥",price:20,num:0,"images":"images/shi@2x.png"},
+				{"id":"d","name":"雪梨银耳百合粥",price:25,num:0,"images":"images/xueli@2x.png"},
+			];
+			$scope.data2=[
+				{"id":"1","name":"莲子核桃黑米粥",price:10,num:0,"images":"images/lianzi@2x.png"},
+				{"id":"2","name":"南瓜粥",price:15,num:0,"images":"images/nangua@2x.png"},
+				{"id":"3","name":"皮蛋瘦肉粥",price:20,num:0,"images":"images/shi@2x.png"},
+				{"id":"4","name":"雪梨银耳百合粥",price:25,num:0,"images":"images/xueli@2x.png"},
+			];
+			$scope.data3=[
+				{"id":"5","name":"莲子核桃黑米粥",price:10,num:0,"images":"images/lianzi@2x.png"},
+				{"id":"6","name":"南瓜粥",price:15,num:0,"images":"images/nangua@2x.png"},
+				{"id":"7","name":"皮蛋瘦肉粥",price:20,num:0,"images":"images/shi@2x.png"},
+				{"id":"8","name":"雪梨银耳百合粥",price:25,num:0,"images":"images/xueli@2x.png"},
+			];
+
+			$scope.cart=[];
+			
+			$scope.$watch("cart",function(){
+				angular.forEach($scope.cart,function(item1,index){
+					 if(item1.num<=0){$scope.cart.splice(index,1)};
+				})
+			},true);
+
+			$scope.set=function(id,bool){
+
+				var oqiu=document.querySelector('.wrap .car .yuan .zongshu');
+				var oZongs=document.querySelector('.wrap .car .yuan');
+				var oJiesuan=document.querySelector('.wrap .car .peisongfei .sp1');
+
+				angular.forEach($scope.data1,function(item1,index){
+					if(id==item1.id){//判断当前
+					if(bool){
+						if(item1.num==0){
+							item1.num=1;
+							$scope.cart.push(item1);
+						}else{
+							item1.num++;
+						}
+					}else{
+							item1.num--;
+							item1.num=item1.num<=0?0:item1.num;
+							if($scope.allNum1+$scope.allNum2+$scope.allNum3==1){
+								oqiu.style.display="none";
+								oZongs.style.background="#1e1e28";
+								var str="￥0元起送";
+        						oJiesuan.innerHTML=str;
+        						oJiesuan.style.background="#2b333b";
+        						oJiesuan.style.color="#919396";
+							}
+						}
+						
+					}
+				})
+				angular.forEach($scope.data2,function(item2,index){
+					if(id==item2.id){//判断当前
+					if(bool){
+						if(item2.num==0){
+							item2.num=1;
+							$scope.cart.push(item2);
+						}else{
+							item2.num++;
+						   }
+						}else{
+							item2.num--;
+							item2.num=item2.num<=0?0:item2.num;
+							if($scope.allNum1+$scope.allNum2+$scope.allNum3==1){
+								oqiu.style.display="none";
+								oZongs.style.background="#1e1e28";
+								var str="￥0元起送";
+        						oJiesuan.innerHTML=str;
+        						oJiesuan.style.background="#2b333b";
+        						oJiesuan.style.color="#919396";
+							}
+						}
+						
+					}
+				})
+				angular.forEach($scope.data3,function(item3,index){
+					if(id==item3.id){//判断当前
+					if(bool){
+						if(item3.num==0){
+							item3.num=1;
+							$scope.cart.push(item3);
+						}else{
+							item3.num++;
+						  }
+						}else{
+							item3.num--;
+							item3.num=item3.num<=0?0:item3.num;
+							if($scope.allNum1+$scope.allNum2+$scope.allNum3==1){
+								oqiu.style.display="none";
+								oZongs.style.background="#1e1e28";
+								var str="￥0元起送";
+        						oJiesuan.innerHTML=str;
+        						oJiesuan.style.background="#2b333b";
+        						oJiesuan.style.color="#919396";
+							}
+						}
+						
+					}
+				})
+				
+				
+			}
+
+			
+			$scope.$watch("cart",function(){
+				angular.forEach($scope.cart,function(item1,index){
+					 if(item1.num<=0){$scope.cart.splice(index,1)};
+				})
+			},true);
+
+			$scope.$watch("data1",function(){
+			$scope.allNum1=0;
+			$scope.allPrice1=0;
+				angular.forEach($scope.data1,function(item1,index){
+					$scope.allNum1+=item1.num;
+					$scope.allPrice1+=item1.num*item1.price;
+				})
+			},true);
+			$scope.$watch("data2",function(){
+			$scope.allNum2=0;
+			$scope.allPrice2=0;
+				angular.forEach($scope.data2,function(item2,index){
+					$scope.allNum2+=item2.num;
+					$scope.allPrice2+=item2.num*item2.price;
+				})
+			},true);
+			$scope.$watch("data3",function(){
+			$scope.allNum3=0;
+			$scope.allPrice3=0;
+				angular.forEach($scope.data3,function(item3,index){
+					$scope.allNum3+=item3.num;
+					$scope.allPrice3+=item3.num*item3.price;
+				})
+			},true);
+		});
+</script>
+<script type="text/javascript">
+
+        function setIco(event) {
+        	var oZongs=document.querySelector('.wrap .car .yuan');
+        	var oqiu=document.querySelector('.wrap .car .yuan .zongshu');
+        	var oJiesuan=document.querySelector('.wrap .car .peisongfei .sp1');
+        	oZongs.style.background="#3690E4";
+        	oqiu.style.display='block';
+        	oJiesuan.style.background="#54DA6B";
+        	oJiesuan.style.color="#fff";
+        	var str="&nbsp&nbsp去&nbsp结&nbsp算&nbsp&nbsp";
+        	oJiesuan.innerHTML=str;
+        	oJiesuan.style.fontWeight="bold";
+
+            // 变量区,当前按钮,当前图片
+        
+            var flyer = $('<div class="u-flyer"></div>');
+
+            
+            //鼠标在页面点击开始位置计算.
+            var top = $(window).scrollTop();
+            
+            var dh = event.pageY;
+
+            var newh = dh - top;
+
+
+            // 鼠标结束位置计算 
+            var oDiv = $('#end').offset();
+            var newdh = oDiv.top - top;
+
+            flyer.fly({
+                start: {
+                    left: event.pageX,
+                    top: newh
+                },
+                end: {
+                    left: oDiv.left,
+                    top: newdh,
+                    width: 0,
+                    height: 0
+                }
+            });
+        }
+</script>
+</body>
+</html>

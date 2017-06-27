@@ -1,0 +1,445 @@
+@charset "UTF-8";
+body, html, .wrap {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+
+.wrap {
+  width: 100%;
+  position: relative; }
+  .wrap .navbar {
+    height: 5.71733rem;
+    background: url(../images/avatar2@2x.png) no-repeat top;
+    background-size: cover; }
+    .wrap .navbar .navbar-btou {
+      height: 4.52267rem;
+      background: rgba(40, 40, 40, 0.5); }
+      .wrap .navbar .navbar-btou .navbar-content {
+        width: 14.50667rem;
+        height: 2.90133rem;
+        padding: 1.024rem 0rem 0.59733rem 0.98133rem; }
+        .wrap .navbar .navbar-btou .navbar-content .toutu {
+          width: 2.73067rem;
+          height: 2.73067rem;
+          float: left; }
+          .wrap .navbar .navbar-btou .navbar-content .toutu :first-child {
+            width: 2.73067rem;
+            height: 2.73067rem; }
+        .wrap .navbar .navbar-btou .navbar-content .pinpai {
+          float: left;
+          margin-left: 0.68267rem;
+          height: 2.90133rem;
+          width: 11.09333rem; }
+          .wrap .navbar .navbar-btou .navbar-content .pinpai :nth-child(1) {
+            font-size: 0.53333rem;
+            color: white;
+            font-weight: bold;
+            padding: 0.10667rem;
+            background: red; }
+          .wrap .navbar .navbar-btou .navbar-content .pinpai :nth-child(2) {
+            font-size: 0.64rem;
+            color: white;
+            font-weight: bold;
+            padding-left: 0.21333rem; }
+          .wrap .navbar .navbar-btou .navbar-content .pinpai :nth-child(3) {
+            font-size: 0.53333rem;
+            color: white; }
+          .wrap .navbar .navbar-btou .navbar-content .pinpai :nth-child(4) {
+            font-size: 0.42667rem;
+            color: #f67272;
+            padding: 0.064rem;
+            background: white;
+            font-weight: 600;
+            font-family: 宋体; }
+          .wrap .navbar .navbar-btou .navbar-content .pinpai :nth-child(5) {
+            font-size: 0.42667rem;
+            color: white;
+            padding-left: 0.21333rem; }
+          .wrap .navbar .navbar-btou .navbar-content .pinpai :nth-child(6) {
+            width: 1.87733rem;
+            height: 1.06667rem;
+            display: block;
+            float: right;
+            text-align: center;
+            line-height: 1.06667rem;
+            border-radius: 0.53333rem/0.53333rem;
+            background: rgba(44, 44, 44, 0.6);
+            font-size: 0.42667rem;
+            color: white; }
+    .wrap .navbar .navbar-gongao {
+      height: 1.19467rem;
+      background: rgba(44, 44, 44, 0.6);
+      text-align: center;
+      line-height: 1.19467rem;
+      overflow: hidden; }
+      .wrap .navbar .navbar-gongao :nth-child(1) {
+        font-size: 0.384rem;
+        background: white;
+        font-weight: 800;
+        padding: 0.04267rem;
+        color: rgba(40, 40, 40, 0.6); }
+      .wrap .navbar .navbar-gongao :nth-child(2) {
+        font-size: 0.42667rem;
+        color: white; }
+  .wrap .xiangq {
+    float: left; }
+    .wrap .xiangq .l1 {
+      height: 1.152rem;
+      background: #f3f5f7;
+      width: 12.48rem;
+      border-left: 2px solid #e5e5e5;
+      line-height: 1.152rem;
+      color: #93999f;
+      font-size: 0.53333rem; }
+    .wrap .xiangq .l2 {
+      height: 4.69333rem;
+      background: white;
+      width: 12.48rem; }
+      .wrap .xiangq .l2 .pidanz {
+        width: 10.96533rem;
+        height: 3.15733rem;
+        background: white;
+        padding: 0.768rem 0.85333rem 0.81067rem 0.768rem; }
+        .wrap .xiangq .l2 .pidanz .zhoutu {
+          width: 2.432rem;
+          height: 2.432rem;
+          float: left; }
+          .wrap .xiangq .l2 .pidanz .zhoutu :first-child {
+            width: 2.432rem;
+            height: 2.432rem; }
+        .wrap .xiangq .l2 .pidanz .xiang {
+          float: left;
+          margin-left: 0.34133rem;
+          height: 3.15733rem;
+          width: 8.10667rem;
+          background: white; }
+          .wrap .xiangq .l2 .pidanz .xiang .p1 {
+            font-size: 0.53333rem;
+            color: #000; }
+          .wrap .xiangq .l2 .pidanz .xiang .p2 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l2 .pidanz .xiang .sp1 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l2 .pidanz .xiang .sp2 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l2 .pidanz .xiang .p3 {
+            font-size: 0.42667rem;
+            color: red;
+            font-weight: bold; }
+            .wrap .xiangq .l2 .pidanz .xiang .p3 span {
+              font-size: 0.32rem; }
+            .wrap .xiangq .l2 .pidanz .xiang .p3 .heng {
+              color: #b4b8bb;
+              text-decoration: line-through; }
+          .wrap .xiangq .l2 .pidanz .xiang .sp3 {
+            width: 0.85333rem;
+            height: 0.85333rem;
+            display: block;
+            float: right;
+            border-radius: 0.42667rem/0.42667rem; }
+            .wrap .xiangq .l2 .pidanz .xiang .sp3 img {
+              width: 100%; }
+    .wrap .xiangq{
+          width:100%;
+              }
+    .wrap .xiangq .l3 {
+      height: 1.152rem;
+      background: #f3f5f7;
+      width: 100%;
+      border-left: 2px solid #e5e5e5;
+      line-height: 1.152rem;
+      color: #93999f;
+      font-size: 0.53333rem; }
+    .wrap .xiangq .l4 {
+      // height: 4.65067rem;
+      background: white;
+      width: 12.48rem; }
+      .wrap .xiangq .l4 .lianziz {
+        width: 10.96533rem;
+        height: 3.2rem;
+        background: white;
+        padding: 0.64rem 0.85333rem 0.64rem 0.768rem;
+        border-bottom: 1px solid #e5e5e5; }
+        .wrap .xiangq .l4 .lianziz .zhoutu {
+          width: 2.432rem;
+          height: 2.432rem;
+          float: left; }
+          .wrap .xiangq .l4 .lianziz .zhoutu :first-child {
+            width: 2.432rem;
+            height: 2.432rem; }
+        .wrap .xiangq .l4 .lianziz .xiang {
+          float: left;
+          margin-left: 0.34133rem;
+          height: 3.2rem;
+          width: 8.10667rem;
+          background: white; }
+          .wrap .xiangq .l4 .lianziz .xiang .p1 {
+            font-size: 0.53333rem;
+            color: #000; }
+          .wrap .xiangq .l4 .lianziz .xiang .sp1 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l4 .lianziz .xiang .sp2 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l4 .lianziz .xiang .p3 {
+            font-size: 0.42667rem;
+            color: red;
+            font-weight: bold; }
+            .wrap .xiangq .l4 .lianziz .xiang .p3 span {
+              font-size: 0.32rem; }
+            .wrap .xiangq .l4 .lianziz .xiang .p3 .heng {
+              color: #b4b8bb;
+              text-decoration: line-through; }
+          .wrap .xiangq .l4 .lianziz .xiang .sp3 {
+            float: right; }
+            .wrap .xiangq .l4 .lianziz .xiang .sp3 .jian {
+              float: right;
+              display: block;
+              width: 0.85333rem;
+              height: 0.85333rem;
+              border-radius: 50%; }
+              .wrap .xiangq .l4 .lianziz .xiang .sp3 .jian img {
+                width: 100%; }
+            .wrap .xiangq .l4 .lianziz .xiang .sp3 .jia {
+              float: right;
+              display: block;
+              width: 0.85333rem;
+              height: 0.85333rem;
+              border-radius: 50%; }
+              .wrap .xiangq .l4 .lianziz .xiang .sp3 .jia img {
+                width: 100%; }
+            .wrap .xiangq .l4 .lianziz .xiang .sp3 .shuz {
+              display: block;
+              text-align: center;
+              padding: 0.08533rem 0.21333rem 0.08533rem 0.21333rem;
+              line-height: 0.68267rem;
+              font-size: 0.42667rem;
+              color: #b4b8bb;
+              float: right; }
+    .wrap .xiangq .l5 {
+      height: 4.65067rem;
+      background: white;
+      width: 12.48rem; }
+      .wrap .xiangq .l5 .xueliz {
+        width: 10.96533rem;
+        height: 3.2rem;
+        background: white;
+        padding: 0.64rem 0.85333rem 0.64rem 0.768rem;
+        border-bottom: 1px solid #e5e5e5; }
+        .wrap .xiangq .l5 .xueliz .zhoutu {
+          width: 2.432rem;
+          height: 2.432rem;
+          float: left; }
+          .wrap .xiangq .l5 .xueliz .zhoutu :first-child {
+            width: 2.432rem;
+            height: 2.432rem; }
+        .wrap .xiangq .l5 .xueliz .xiang {
+          float: left;
+          margin-left: 0.34133rem;
+          height: 3.2rem;
+          width: 8.10667rem;
+          background: white; }
+          .wrap .xiangq .l5 .xueliz .xiang .p1 {
+            font-size: 0.53333rem;
+            color: #000; }
+          .wrap .xiangq .l5 .xueliz .xiang .sp1 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l5 .xueliz .xiang .sp2 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l5 .xueliz .xiang .p3 {
+            font-size: 0.42667rem;
+            color: red;
+            font-weight: bold; }
+            .wrap .xiangq .l5 .xueliz .xiang .p3 span {
+              font-size: 0.32rem; }
+            .wrap .xiangq .l5 .xueliz .xiang .p3 .heng {
+              color: #b4b8bb;
+              text-decoration: line-through; }
+          .wrap .xiangq .l5 .xueliz .xiang .sp3 {
+            width: 0.85333rem;
+            height: 0.85333rem;
+            display: block;
+            float: right;
+            border-radius: 0.42667rem/0.42667rem; }
+            .wrap .xiangq .l5 .xueliz .xiang .sp3 img {
+              width: 100%; }
+    .wrap .xiangq .l6 {
+      height: 4.65067rem;
+      background: white;
+      width: 12.48rem; }
+      .wrap .xiangq .l6 .nanguaz {
+        width: 10.96533rem;
+        height: 3.2rem;
+        background: white;
+        padding: 0.64rem 0.85333rem 0.64rem 0.768rem;
+        border-bottom: 1px solid #e5e5e5; }
+        .wrap .xiangq .l6 .nanguaz .zhoutu {
+          width: 2.432rem;
+          height: 2.432rem;
+          float: left; }
+          .wrap .xiangq .l6 .nanguaz .zhoutu :first-child {
+            width: 2.432rem;
+            height: 2.432rem; }
+        .wrap .xiangq .l6 .nanguaz .xiang {
+          float: left;
+          margin-left: 0.34133rem;
+          height: 3.2rem;
+          width: 8.10667rem;
+          background: white; }
+          .wrap .xiangq .l6 .nanguaz .xiang .p1 {
+            font-size: 0.53333rem;
+            color: #000; }
+          .wrap .xiangq .l6 .nanguaz .xiang .sp1 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l6 .nanguaz .xiang .sp2 {
+            font-size: 0.42667rem;
+            color: #b4b8bb; }
+          .wrap .xiangq .l6 .nanguaz .xiang .p3 {
+            font-size: 0.42667rem;
+            color: red;
+            font-weight: bold; }
+            .wrap .xiangq .l6 .nanguaz .xiang .p3 span {
+              font-size: 0.32rem; }
+            .wrap .xiangq .l6 .nanguaz .xiang .p3 .heng {
+              color: #b4b8bb;
+              text-decoration: line-through; }
+          .wrap .xiangq .l6 .nanguaz .xiang .sp3 {
+            width: 0.85333rem;
+            height: 0.85333rem;
+            display: block;
+            float: right;
+            border-radius: 0.42667rem/0.42667rem; }
+            .wrap .xiangq .l6 .nanguaz .xiang .sp3 img {
+              width: 100%; }
+  .wrap .car {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 2.048rem;
+    width: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.9); }
+    .wrap .car .yuan {
+      text-align: center;
+      line-height: 2.13333rem;
+      height: 2.13333rem;
+      width: 2.13333rem;
+      border-radius: 50%;
+      position: absolute;
+      left: 0.72533rem;
+      bottom: 0.42667rem;
+      background: #1e1e28;
+      z-index:99999;
+       }
+      .wrap .car .yuan img {
+        vertical-align: middle;
+        width: 1.87733rem; }
+    .wrap .car .peisongfei {
+      float: right;
+      color: #919396;
+      font-size: 0.53333rem;
+      line-height: 2.048rem; 
+    }
+    .wrap .car .yuan .zongshu{
+      position:absolute;
+      text-align:center;
+      line-height:0.75rem;
+      color:#FFF;
+      display:none;
+      font-size:0.5rem;
+      width:0.75rem;
+      height:0.75rem;
+      border-radius:50%;
+      background:#FF4F28;
+      top:-0.2rem;
+      right:0;
+    }
+    .wrap .car .peisongfei span {
+        padding: 0 0.42667rem;
+        float: left; }
+    .wrap .car .peisongfei .sp1 {
+        display: block;
+        height: 2.048rem;
+        background: #2b333b; }
+    .wrap .shangla{
+      position:fixed;
+      width:100%;
+      background:#fff;
+      left:0;
+      bottom:2.048rem;
+      z-index:99;
+      display:none;
+    }
+    .wrap .shangla .qingchu{
+      height:2.0rem;
+      background:#ECEFF1;
+      line-height:2.0rem;
+    }
+
+    .wrap .shangla .qingchu .sp2{
+      float:right;
+      padding-right: 0.5rem;
+    }
+    .wrap .shangla .qingchu .sp1{
+      line-height:2.0rem;
+      padding-left: 0.5rem;
+    }
+    .wrap .shangla .qingchu .sp1 .shu{
+      color:blue;
+      font-weight:bold;
+    }
+    .wrap .shangla .liebiao{
+      height:2.5rem;
+      line-height:2.5rem; 
+    }
+    .wrap .shangla .liebox{
+      overflow-y: auto;
+      max-height: 10.0rem;
+    }
+    .wrap .shangla .liebiao .mingcheng{
+      float:left;
+      padding-left: 0.5rem;
+    }
+    .wrap .shangla .liebiao .spjia{
+      float:right;
+      padding-right:0.5rem;
+      line-height:2.5rem;
+    }
+    .wrap .shangla .liebiao .spjia>img{
+      vertical-align:middle;
+      width:0.85333rem;
+      height:0.85333rem;
+    }
+    .wrap .shangla .liebiao .spjian>img{
+      width:0.85333rem;
+      height:0.85333rem;
+      vertical-align:middle;
+    }
+    .wrap .shangla .liebiao .spjian{
+      float:right;
+      padding-right:0.5rem;
+      line-height:2.5rem;
+    }
+    .wrap .shangla .liebiao .shuliang{
+      float:right;
+      padding-right:0.5rem;
+      line-height:2.5rem;
+    }
+    .wrap .shangla .liebiao .spjiage{
+      float:right;
+      padding-right:0.5rem;
+      line-height:2.5rem;
+      color:red;
+      font-weight:bold;
+    }
+
+
+/*# sourceMappingURL=index.css.map */
